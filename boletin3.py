@@ -54,3 +54,20 @@ elif years >=17 and years  <= 65:
     print(f"En la etapa de los {years} estabas en post-Obligatoria")
 else:
     print("Ha ocurrido un error")
+
+'''
+Ejercicio 5
+'''
+number = int(input("Dime el primer numero: "))
+number2 = int(input("Dime el segundo numero: "))
+number3 = int(input("Dime el tercer numero: "))
+number4 = int(input("Dime el cuarto numero: "))
+
+media = (number + number2 + number3 + number4) /4
+
+if number and number2 and number3 and number4 < media:
+    print(f"Es menor a la media {media}")
+elif number and number2 and number3 and number4 > media:
+    print(f"Es mayor a la media {media}")
+else:
+    print(f"Estas muy por debajo de la media {media}")
