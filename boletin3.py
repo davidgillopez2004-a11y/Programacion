@@ -71,3 +71,36 @@ elif number and number2 and number3 and number4 > media:
     print(f"Es mayor a la media {media}")
 else:
     print(f"Estas muy por debajo de la media {media}")
+
+
+'''
+Ejercicio 8
+'''
+estado_civil = input("Introduce el estado civil (S-Soltero, C-Casado, V-Viudo, D-Divorciado): ")
+edad = int(input("Introduce la edad: "))
+
+if edad > 50:
+    print(f"Segun su edad {edad} hay un 8,5% como usted")
+elif (estado_civil == 'S' or estado_civil == 's' or estado_civil == 'D' or estado_civil == 'd') and edad < 35:
+        print(f"Segun su edad {edad} hay un 12% como usted")
+elif (estado_civil == 'V' or estado_civil == 'v' or estado_civil == 'C' or estado_civil == 'c') and edad < 35:
+        print(f"Segun su edad {edad} hay un 11,3% como usted")
+else:
+        print(f"Segun su edad {edad} hay un 10,5% como usted")
+
+
+'''
+Ejercicio 9
+'''
+
+dia_semana = int(input("Dime el dia de la semana: "))
+
+if dia_semana <= 7 :
+    print(f"El dia de la semana es {dia_semana}")
+else:
+    print(f"Error")
+
+
+'''
+Ejercicio 10
+'''
