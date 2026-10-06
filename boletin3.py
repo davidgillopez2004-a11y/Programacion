@@ -133,3 +133,117 @@ if 0 <= hora <= 23 and 0 <= hora2 <= 23 and 0 <= minutos <= 59 and 0 <= minutos2
                 print("Las horas son iguales")
 else:
     print("Los datos son erroneos")
+
+'''
+Ejercicio 11
+'''
+cliente = input("Introduce si eres un estudiante o estudiante regular: ")
+gastado = float(input("¿Cuanto te has gastado? : "))
+
+if cliente == "estudiante" and gastado >=100:
+    print("Tienes un descuento del 15%")
+    descuento = 0.15
+elif cliente == "estudiante" and gastado < 100:
+    print("Tienes un descuento del 10%")
+    descuento = 0.10
+elif cliente == "estudiante regular" and gastado >= 200:
+    print("Tienes un descuento del 12%")
+    descuento = 0.12
+else:
+    print("Tienes un descuento del 5%")
+    descuento = 0.05
+
+precio_final = gastado * (1 - descuento)
+
+print("Descuento aplicado:", descuento * 100, "%")
+print("El precio final es:", precio_final)
+
+'''
+Ejercicio 12
+'''
+
+dia_semana = int(input("Introduce el dia de la semana: "))
+vacaciones = input("¿Esta de vacaciones?: ")
+
+if (1 <= dia_semana <= 5) and (vacaciones == "No" or vacaciones == "no") :
+        print(f"En el dia {dia_semana}  {vacaciones} esta de vacaciones y la alarma suena a las 7:00")
+elif (6 <= dia_semana <= 7) and (vacaciones == "No" or vacaciones == "no"):
+        print(f"En el dia {dia_semana}  {vacaciones} esta de vacaciones  y la alarma suena a las 10:00")
+else:
+        print(f"En el dia {dia_semana} {vacaciones} esta de vacaciones  y la alarma esta apagada")
+
+'''
+Ejercicio 13
+'''
+
+caracter = input("Introduce un comparador: ")
+numero1 = int(input("Introduce el primer numero: "))
+numero2 = int(input("Introduce el segundo numero: "))
+
+# Operadores + - * /
+
+if caracter == "+":
+    solucion = numero1 + numero2
+    print("solucion", solucion)
+elif caracter == "-":
+    solucion = numero1 - numero2
+    print("solucion", solucion)
+elif caracter == "*":
+    solucion = numero1 * numero2
+    print("solucion", solucion)
+elif caracter == "/":
+    if numero2 != 0:
+        solucion = numero1 / numero2
+        print("solucion", solucion)
+    else:
+        print("No se puede dividir entre cero")
+
+'''
+Ejercicio 14
+'''
+#No se como hacerlo
+monedas = int(input("¿Cuantas monedas tiene?: "))
+contador = 0
+#monedas: 2€, 1€, 50c, 20c, 10c, 5c, 2c, 1c
+
+if monedas > 2: 
+
+
+'''
+Ejercicio 15
+'''
+#Da mal
+dia = int(input("Introduce el dia: "))
+mes = int(input("Introduce el mes: ")) 
+year = int(input("Introduce el año: "))
+
+if year %4==0 and not (year%100==+0):
+    print("Ese año es bisiesto")
+else:
+    print("No es bisiesto")
+    if mes ==1  or mes ==3  or mes ==5 or mes ==7  or mes==8 or mes==10 or mes==12:
+        if dia <= 31:
+            print(f"La fecha {dia} / {mes} / {year} es valida")
+        else:
+            print("La fecha es invalida")
+    elif mes==4 or mes==6 or mes==9 or mes==11:
+        if dia <= 30:
+            print(f"La fecha {dia} / {mes} / {year} es valida")
+        else:
+            print("La fecha es invalida")
+
+'''
+Ejercicio 18
+'''
+base = int(input("Dime la base: "))
+exponente = int(input("Dime el exponente: "))
+
+if exponente >0 :
+    resultado = base ** exponente
+    print(resultado)
+elif exponente ==0:
+    resultado = 1
+    print(resultado)
+else:
+    resultado = 1/(base**exponente)
+    print(resultado)
