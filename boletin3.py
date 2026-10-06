@@ -76,19 +76,20 @@ else:
 '''
 Ejercicio 8
 '''
-estado_civil = input("Introduce el estado civil (S-Soltero, C-Casado, V-Viudo, D-Divorciado): ")
+
+estado_civil = input("Introduce el estado civil (Soltero, Casado, Viudo, Divorciado): ")
 edad = int(input("Introduce la edad: "))
 
-if edad > 50:
-    print(f"Segun su edad {edad} hay un 8,5% como usted")
-elif (estado_civil == 'S' or estado_civil == 's' or estado_civil == 'D' or estado_civil == 'd') and edad < 35:
-        print(f"Segun su edad {edad} hay un 12% como usted")
-elif (estado_civil == 'V' or estado_civil == 'v' or estado_civil == 'C' or estado_civil == 'c') and edad < 35:
-        print(f"Segun su edad {edad} hay un 11,3% como usted")
-else:
-        print(f"Segun su edad {edad} hay un 10,5% como usted")
-
-
+if edad > 50 :
+    print ("Retenion del 8,5%")
+elif edad > 35:
+    print ("Retencion del 10,5%")
+elif edad>0:
+    if estado_civil=="Soltero" or estado_civil=="Divorciado":
+        print("Retencion del 12%")
+    elif estado_civil=="Viudo" or estado_civil=="Casado":
+        print("Retencion del 11,3%")
+    
 '''
 Ejercicio 9
 '''
@@ -104,3 +105,32 @@ else:
 '''
 Ejercicio 10
 '''
+
+hora = int(input("Introduce la hora: "))
+minutos = int(input("Introduce los minutos: "))
+segundos = int(input("Introduce los segundos: "))
+
+hora2 = int(input("Introduce la hora: "))
+minutos2 = int(input("Introduce los minutos: "))
+segundos2 = int(input("Introduce los segundos: "))
+
+if 0 <= hora <= 23 and 0 <= hora2 <= 23 and 0 <= minutos <= 59 and 0 <= minutos2 <= 59 and 0 <= segundos <= 59 and 0 <= segundos2 <= 59:
+    
+    if hora > hora2:
+        print(f"{hora} : {minutos}: {segundos} es mayor que {hora2} : {minutos2}: {segundos2}")
+    elif hora < hora2:
+        print(f"{hora} : {minutos}: {segundos} es menor que {hora2} : {minutos2}: {segundos2}")
+    else:
+        if minutos > minutos2:
+            print(f"{hora} : {minutos}: {segundos} es mayor que {hora2} : {minutos2}: {segundos2}")
+        elif minutos < minutos2:
+            print(f"{hora} : {minutos}: {segundos} es menor que {hora2} : {minutos2}: {segundos2}")
+        else:
+            if segundos > segundos2:
+                print(f"{hora} : {minutos}: {segundos} es mayor que {hora2} : {minutos2}: {segundos2}")
+            elif segundos < segundos2:
+                print(f"{hora} : {minutos}: {segundos} es menor que {hora2} : {minutos2}: {segundos2}")
+            else:
+                print("Las horas son iguales")
+else:
+    print("Los datos son erroneos")
