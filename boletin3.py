@@ -96,11 +96,10 @@ Ejercicio 9
 
 dia_semana = int(input("Dime el dia de la semana: "))
 
-if dia_semana <= 7 :
+if 0 <= dia_semana <= 7 :
     print(f"El dia de la semana es {dia_semana}")
 else:
     print(f"Error")
-
 
 '''
 Ejercicio 10
