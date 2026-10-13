@@ -1,27 +1,35 @@
 '''
 Ejercicio 1
 ''' 
-"""
+
 #Escribe un programa que pida dos números por teclado y luego muestre en pantalla los números comprendidos entre ellos. 
 # Por ejemplo, si se introducen el 5 y el 3, mostrará: 3, 4, 5. Utiliza bucles for y while [for/while].
-
+"""
 numero1 = int(input("Introduce el primer numero: "))
 numero2 = int(input("Introduce el segundo numero: "))
 
-for i in range (3,6):
-    print(i)
+for i in range (numero1,numero2):
+    print(i+1)
 
 #While
-while numero1 <= numero2 :
-    print(numero1)
-    numero1+=1
-"""
+if numero1 <= numero2:
+    while numero1 <= numero2:
+        print(numero1)
+        numero1+=1
+elif numero2 <= numero1:
+    while numero2 <= numero1:
+        print(numero2)
+        numero2+=1
+else:
+    print("fallo del sistema")
+""" 
 
 '''
 Ejercicio 2
 '''
-"""
+
 # Crea un programa que reciba un número y luego muestre la tabla de multiplicar de dicho número, utilizando únicamente bucles while.
+"""
 numero = int(input("Introduce por el numero que quieras multiplicar: "))
 contador=0
 
@@ -72,12 +80,20 @@ Ejercicio 5
 # 5. Crea un programa que reciba números hasta que se introduzca un número fuera del rango [0, 10.000]. 
 # En ese momento, informará de cuántos números se han introducido, así como de su valor máximo y su media.  
 # "Se han introducido 50 números, con un máximo de 27 y un promedio de 3,28."
-""" #no se hacerlo 
-numero = int(input("Introduce un numero: "))
+ #no se hacerlo 
 
-while 0 <= numero <= 10000:
-    max = numero
-"""
+
+numero = int(input("Introduce un numero: "))
+contador = 0
+max = numero
+
+while numero < 10000 and numero > 0:
+    numero=int(input("Introduce un numero entre el 0 y el 10000: "))
+print(numero)
+for i in range(numero,max):
+    numero=int(input(f"El numero mas grande que has puesto es {max}"))
+    resultado = numero%max
+    print(f"La media es {resultado}")
 
 '''
 Ejercicio 6
@@ -103,7 +119,7 @@ for i in range(1+n):
 
 # 8. Crea un programa que reciba dos números numero_1 y numero_2 y devuelva su producto 
 # sin utilizar el operador de multiplicación (*). Los números pueden ser enteros positivos o negativos.
-
+"""
 numero_1 = int(input("Introduce el primer numero: "))
 numero_2 = int(input("Introduce el segundo numero: "))
 contador = 0
@@ -116,7 +132,7 @@ else:
         contador += numero_1
 
 print(f"El producto es {contador}")
-
+"""
 # 9. Diseña un programa que realice la operación módulo (%) de dos números, 
 # sin utilizar ni el operador módulo ni la división.
 
