@@ -80,42 +80,86 @@ Ejercicio 5
 # 5. Crea un programa que reciba números hasta que se introduzca un número fuera del rango [0, 10.000]. 
 # En ese momento, informará de cuántos números se han introducido, así como de su valor máximo y su media.  
 # "Se han introducido 50 números, con un máximo de 27 y un promedio de 3,28."
- #no se hacerlo 
-
-
+"""
 numero = int(input("Introduce un numero: "))
 contador = 0
 max = numero
+suma = 0
 
-while numero < 10000 and numero > 0:
+while numero >= 0 and numero <= 10000:
+    contador+=1
+    suma+=numero
+    print(numero)
+    if numero > max:
+        print(f"El numero {numero} es mayor que el numero maximo que ha puesto {max}")
+    else:
+        print(f"El numero {numero} es menor que el numero maximo que ha puesto {max}")
     numero=int(input("Introduce un numero entre el 0 y el 10000: "))
-print(numero)
-for i in range(numero,max):
-    numero=int(input(f"El numero mas grande que has puesto es {max}"))
-    resultado = numero%max
-    print(f"La media es {resultado}")
-
+    if contador > 0:
+        resultado = suma/contador
+        print(f"Se ha introducido un total de {contador} numeros, con el valor maximo de {max} y una media de {resultado}")
+    else:
+        print("Numero no valido")
+"""
 '''
 Ejercicio 6
 '''
 # 6. Escribe un programa que pida un entero positivo n y devuelva la suma de los números entre 1 y n. 
 # Si el número no es un entero positivo, debe informar del error y volver a pedirlo. 
 # Desarróllalo utilizando ambos tipos de bucles y también sin bucles.
-""" #no se hacerlo
+
+#FOR
+"""
 n = int(input("Introduce un numero: "))
 contador = 0
 
-for i in range(1+n):
-    contador+=1
-    if contador >= 0:
-        print("La suma es positiva")
-    else:
-        print("La suma no es positiva")
+for i in range(1,1+n):
+    contador+=i
+if contador >= 0:
+    print(f"La suma es positiva: {contador}")
+else:
+    print(f"La suma no es positiva: {contador}")
+"""
+#While
+"""
+n = int(input("Introduce un numero: "))
+contador = 0
+
+while n <= 0:
+    print("Introduce un numero positivo")
+    n = int(input("Introduce un número: "))
+for i in range(1,1+n):
+    contador+=i
+if contador >= 0:
+    print(f"La suma es positiva: {contador}")
+else:
+    print(f"La suma no es positiva: {contador}")
+"""
+
+#Sin bucles
+"""
+n = int(input("Introduce un numero: "))
+contador = 0
+
+resultado = (n*(n+1)) //2
+print(f"La suma da un total de {resultado}")
 """
 
 # 7. Crea un programa similar al anterior, pero que reciba dos enteros positivos n y m, 
 # y devuelva la suma de los números entre n y m. Verifica que los datos de entrada sean válidos.
+#FOR
+"""
+n = int(input("Introduce un numero: "))
+m = int(input("Introduce un numero: "))
+contador = 0
 
+for i in range(n,m+1):
+    contador+=i
+if contador >= 0:
+    print(f"La suma es positiva: {contador}")
+else:
+    print(f"La suma no es positiva: {contador}")
+"""
 
 # 8. Crea un programa que reciba dos números numero_1 y numero_2 y devuelva su producto 
 # sin utilizar el operador de multiplicación (*). Los números pueden ser enteros positivos o negativos.
