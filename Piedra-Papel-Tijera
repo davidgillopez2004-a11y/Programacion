@@ -1,0 +1,44 @@
+eleccion1, eleccion2 = "", ""
+
+while not(eleccion1=="Spock" and eleccion2=="Spock"):
+
+    eleccion1 = input("Introduce... (Piedra/Papel/Tijera/Lagarto/Spock): ")
+
+    while not(eleccion1=="Piedra" or eleccion1=="Papel" or eleccion1=="Tijera" or eleccion1=="Lagarto" or eleccion1=="Spock"):
+        eleccion1 = input("Introduce un dato correcto en la eleccion 1: (Piedra/Papel/Tijera/Lagarto/Spock): ")
+
+#Eleccion 2
+    eleccion2 = input("Introduce... (Piedra/Papel/Tijera/Lagarto/Spock): ")
+
+    while (eleccion2!="Piedra" and eleccion2!="Papel" and eleccion2!="Tijera" and eleccion2!="Lagarto" and eleccion2!="Spock"):
+        eleccion2 = input("Introduce un dato correcto en la eleccion 2: (Piedra/Papel/Tijera/Lagarto/Spock): ")
+
+if eleccion1==eleccion2:
+    print(f"Han empatado")
+
+elif eleccion1=="Tijera":
+    if eleccion2=="Lagarto" or eleccion2=="Papel":
+        print(f"{eleccion1} gana a {eleccion2}")
+    else:
+        print(f"{eleccion2} gana a {eleccion1}")
+
+elif eleccion1=="Piedra":
+    if eleccion2=="Lagarto" or eleccion2=="Tijera":
+        print(f"{eleccion1} gana a {eleccion2}")
+    else:
+        print(f"{eleccion2} gana a {eleccion1}")
+
+elif eleccion1=="Papel":
+    if eleccion2=="Spock" or eleccion2=="Piedra":
+        print(f"{eleccion1} gana a {eleccion2}")
+    else:
+        print(f"{eleccion2} gana a {eleccion1}")
+
+elif eleccion1=="Lagarto":
+    if eleccion2=="Spock" or eleccion2=="Papel":
+        print(f"{eleccion1} gana a {eleccion2}")
+    else:
+        print(f"{eleccion2} gana a {eleccion1}")
+
+else:
+    print(f"{eleccion2} gana a {eleccion1}")
