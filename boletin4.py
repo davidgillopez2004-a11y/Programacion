@@ -179,8 +179,122 @@ print(f"El producto es {contador}")
 """
 # 9. Diseña un programa que realice la operación módulo (%) de dos números, 
 # sin utilizar ni el operador módulo ni la división.
+"""
+dividiendo = int(input("Introduce el dividiendo: "))
+divisor = int(input("Introduce el divisor: "))
 
+resultado = dividiendo-divisor
+if divisor == 0:
+    print("No se puede dividir entre cero")
+else:
+    resultado = dividiendo
 
+while resultado >= divisor:
+    resultado -= divisor
+print(f"El resto es: {resultado}")
+"""
 # 10. Escribe un programa que pregunte al usuario cuántos números positivos desea introducir y luego se los pida por consola. 
 # Si el usuario introduce un número no válido, se le volverá a pedir (el número no válido no cuenta para el total). 
 # Una vez introducidos todos los números, mostrará el promedio, el máximo y el mínimo.
+"""
+numero = int(input("¿Cuántos números positivos quieres introducir? "))
+
+contador = 0
+suma = 0
+
+while contador < numero:
+    numero = int(input("Introduce un número positivo: "))
+
+    if numero > 0:
+        suma = suma + numero
+        contador = contador + 1
+
+        if contador == 1:
+            maximo = numero
+            minimo = numero
+        else:
+            if numero > maximo:
+                maximo = numero
+
+            if numero < minimo:
+                minimo = numero
+    else:
+        print("Número no válido. Inténtalo de nuevo.")
+
+promedio = suma / numero
+
+print(f"El promedio es: {promedio}")
+print("El máximo es:", maximo)
+print("El mínimo es:", minimo)
+"""
+
+#11.Escribe un programa que reciba un valor y cree una pirámide de asteriscos de esa altura (cada línea contiene un número impar de asteriscos). 
+#Por ejemplo, para el valor 3 tendrías:
+"""
+altura = int(input("Introduce la altura de la piramide: "))
+
+for i in range(1, altura + 1):
+  espacios = " " * (altura - i)
+  asteriscos = "*" * (2 * i - 1)
+  print(espacios + asteriscos)
+"""
+#12.Crea un programa que reciba un número entero positivo mayor que 0 y luego informe si es un número perfecto, 
+# considerando que un número es perfecto si es igual a la suma de todos sus divisores.
+"""
+numero = int(input("Introduce un número mayor que 0: "))
+contador = 0
+
+for i in range(1, numero):
+    if (numero%i == 0):
+        contador += i
+while numero < 0:
+    numero = int(input("Intentalo de nuevo: "))
+if (contador == numero):
+    print(f"El {numero} es perfecto.")
+else:
+    print(f"El {numero} no es perfecto.")
+"""
+
+#13.Escribe un programa para mostrar los n términos de una serie armónica y su suma.
+#La serie armónica contiene términos 1/1 + 1/2 + 1/3 + 1/4 + 1/5 \dots 1/n. Entrada de número de términos: 5   
+# Salida esperada: $1/1 + 1/2 + 1/3 + 1/4 + 1/5$   
+#Suma de la serie hasta 5 términos: 2.283334
+"""
+numero = int(input("Introduce un numerin: "))
+contador = 0
+armonica = ""
+
+for i in range(1,numero+1):
+    contador=contador + 1 / i
+    if i == 1:
+        armonica = "1/" + str(i)
+    else:
+        armonica = armonica + " + 1/" + str(i)
+print(armonica)
+print(f"La suma total de los 5 primeros numeros {numero} = {contador}") 
+"""
+#14.Escribe un programa en Python para mostrar un patrón en forma de diamante
+"""
+altura = int(input("Introduce la altura de la piramide: "))
+
+for i in range(1, altura + 1):
+  espacios = " " * (altura - i)
+  asteriscos = "*" * (2 * i - 1)
+  print(espacios + asteriscos)
+
+for i in range(altura - 1, 0, -1):
+  espacios = " " * (altura - i)
+  asteriscos = "*" * (2 * i - 1)
+  print(espacios + asteriscos)
+"""
+
+#15. Dado un número, escribe un programa para calcular su factorial, considerando que el factorial de un número se define como 1 * 2 * 3 * ... * número. 
+# Además, para el caso en que el número sea 0, el factorial es 1.
+"""
+numero = int(input("Introduce un numero: "))
+factorial = 1
+
+for i in range (1,numero+1):
+    factorial*=i
+print(f"El factorial del numero que has asignado {numero} el factorial es {factorial}")
+"""
