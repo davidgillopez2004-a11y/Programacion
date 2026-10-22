@@ -89,13 +89,109 @@ while a < 5 :
     print("a")
     a+=1
 """
-
+"""
 i = 10
 while i>-1:
     print(i)
     i-=1
-
+"""
 """
 for i in range (10,1,-1):
     print(f"La cuenta atras es...{i}")
 """
+"""
+numero = int(input("Introduce un numero:"))
+
+while numero < 0:
+    numero=int(input("Introduce un numero positivo:"))
+print(numero)
+"""
+#FUNCIONES
+"""
+def es_par (numero):
+    return numero%2==0
+
+def es_impar(numero):
+    return not es_par(numero)
+
+print(es_par(3), es_par(2), es_par(15))
+"""
+
+#declaracion
+#argumentos (opcionales y entre parentesis)
+#cuerpo
+#sentencia return: donde devuelve el valor/valores correspondientes
+
+
+"""
+def dia_semana(dia):
+    while dia=="L" or dia=="M" or dia=="X" or dia=="J" or dia=="V" or dia=="S" or dia=="D":
+        print("Dime el dia de la semana")
+        
+        if dia=="L":
+            print(f"Es {dia}")
+        elif dia=="M":
+            print(f"Es {dia}")
+        elif dia=="X":
+            print(f"Es {dia}")
+        elif dia=="J":
+            print(f"Es {dia}")
+        elif dia=="V":
+            print(f"Es {dia}")
+        elif dia=="S":
+            print(f"Es {dia}")
+        else:
+            print(f"Es {dia}")
+    return(dia_semana)
+"""
+
+#corregido
+"""
+def obtener_dia_semana(valor_numerico):
+    dia_semana = ""
+
+    if valor_numerico==1:
+        dia_semana = "Lunes"
+    elif valor_numerico==2:
+        dia_semana = "Martes"
+    elif valor_numerico==3:
+        dia_semana = "Miercoles"
+    elif valor_numerico==4:
+        dia_semana = "Jueves"
+    elif valor_numerico==5:
+        dia_semana = "Viernes"
+    elif valor_numerico==6:
+        dia_semana = "Sabado"
+    elif valor_numerico==7:
+        dia_semana = "Domingo"
+    else:
+        dia_semana = "Dia erroneo"
+
+    return dia_semana
+
+dia = int(input("Introduce el dia de la semana:"))
+print(obtener_dia_semana(dia))
+"""
+
+#mala practica
+def obtener_dia_semana(valor_numerico):
+
+    if valor_numerico==1:
+        return"Lunes"
+    elif valor_numerico==2:
+        return "Martes"
+    elif valor_numerico==3:
+        return "Miercoles"
+    elif valor_numerico==4:
+        return "Jueves"
+    elif valor_numerico==5:
+        return "Viernes"
+    elif valor_numerico==6:
+       return "Sabado"
+    elif valor_numerico==7:
+        return "Domingo"
+    else:
+        return "Dia erroneo"
+
+dia = int(input("Introduce el dia de la semana:"))
+print(obtener_dia_semana(dia))
