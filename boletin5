@@ -1,0 +1,30 @@
+'''
+Ejercicio 1
+'''
+"""
+numero = "9"
+termino = int(input("Introduce la cantidad de numeros que desee: "))
+acumulador = 0
+total = 0
+
+for i in range(termino+1):
+    print(numero*i)
+    acumulador = acumulador*10+9
+    total = total+acumulador
+print(f"Ha introducido la cantidad de {termino} y el resultado es {acumulador} y la cantidad de numero es {total}")
+"""
+
+'''
+Ejercicio 4
+'''
+
+numero = "1"
+termino = int(input("Introduce la cantidad de numeros que desee: "))
+acumlador = 0
+
+for i in range(termino+1):
+    print(numero*i)
+    resultado = acumlador*10+9
+    acumlador+=1
+    total = acumlador
+print(f"Ha introducido la cantidad de {termino} y la cantidad de numero es {total}")
