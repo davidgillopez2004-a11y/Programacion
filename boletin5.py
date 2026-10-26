@@ -45,15 +45,26 @@ print(f"Ha introducido la cantidad de {termino} y la cantidad de numero es {tota
 Ejercicio 10
 '''
 
-aniversario = int(input("Introduce el mes del aniversario (Porfavor que sea con numero)"))
-teclado = 0
-recompensa = 150
+aniversario = int(input("Introduce el número total de años trabajados:"))
+teclado = 1
+teclados_nuevos = 0
+recompensa = 300
+contador = 1
+resultado = 0
+total = 0
 
+while aniversario >= contador :
+    if contador % 2 == 0:
+        total += recompensa
+        recompensa+=150
+    else:
+        teclados_nuevos += teclado
+        teclado = teclado * 2
 
-while aniversario%2==0:
-    total= recompensa*2
-    total+recompensa
-print(aniversario)
+    contador+=1 
+print(f"Ha recibido la recompensa de {total}€")
+print(f"Ha recibido la recompensa de {teclados_nuevos} teclado/s")
+print(f"Ha ganado un total de {total}€ y {teclados_nuevos} teclados")
     
 
 while aniversario%2==1:
