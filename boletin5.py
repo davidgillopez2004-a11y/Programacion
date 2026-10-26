@@ -65,8 +65,3 @@ while aniversario >= contador :
 print(f"Ha recibido la recompensa de {total}€")
 print(f"Ha recibido la recompensa de {teclados_nuevos} teclado/s")
 print(f"Ha ganado un total de {total}€ y {teclados_nuevos} teclados")
-    
-
-while aniversario%2==1:
-    teclado*2
-    print(teclado)
