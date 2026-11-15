@@ -23,9 +23,11 @@ def es_camelcase(camelcase):
     resultado=""
     for i in range(len(camelcase)):
         if camelcase[i] != " ":
-            resultado+=camelcase[i].upper(camelcase:)
+            if camelcase[i - 1] == " ":
+                resultado+=camelcase[i].upper()
+            else:
+                resultado+=camelcase[i].lower()
     return resultado
-
 
 assert(es_camelcase("hola mundo cruel")=="holaMundoCruel")
 assert(es_camelcase("hola mundo cruel")!="HolaMundoCruel")
