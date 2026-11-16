@@ -174,6 +174,7 @@ print(obtener_dia_semana(dia))
 """
 
 #mala practica
+"""
 def obtener_dia_semana(valor_numerico):
 
     if valor_numerico==1:
@@ -195,3 +196,55 @@ def obtener_dia_semana(valor_numerico):
 
 dia = int(input("Introduce el dia de la semana:"))
 print(obtener_dia_semana(dia))
+"""
+
+"""
+cadena = "Hola"
+
+print(cadena[len(cadena)]) # Sale error
+
+for i in range(-len(cadena),0):
+    print(i,cadena[i])
+"""
+"""
+cadena = "12"
+
+print(cadena[0], cadena[-len(cadena)])
+print(cadena[-1], cadena[len(cadena)-1])
+"""
+"""
+cadena = "hola"
+
+print(cadena[::-1])
+print(cadena[::])
+print(cadena[::1])
+print(cadena[::2])
+"""
+"""
+def son_iguales(cadena1,cadena2):
+    return cadena1.lower()==cadena2.lower()
+assert(son_iguales("hola","hola"))
+assert(son_iguales("Hola","hola"))
+assert(son_iguales("hola","hOla"))
+assert(son_iguales("HOLA","hola"))
+assert(son_iguales("hola","HOLA"))
+assert(son_iguales("HOLA","HOLA"))
+assert(son_iguales("",""))
+assert(son_iguales(". ",". "))
+assert(not son_iguales("hola","adios"))
+print("fin")
+"""
+
+
+"""
+LISTAS
+"""
+
+nombres = ['Juan','Manuel']
+
+nombres.append('Enrique') # añade el ultimo puesto
+nombres.remove('Manuel') # borrar este nombre en concreto
+
+nombres.remove('Jose') # Da error
+'Jose' in nombres #busca el nombre
+nombres.insert(0,'Jose')
