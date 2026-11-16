@@ -112,23 +112,131 @@ assert (numberInString("ab325op")==3)
 assert (numberInString("abce")==6)
 """
 
+'''
+Ejercicio 8
+Diseña una función llamada palindrome que tenga una cadena de caracteres como parámetro de entrada y devuelva True si es un palíndromo o False en los demás casos. 
+Una palabra es un palíndromo si se puede leer igual de izquierda a derecha que de derecha a izquierda, ignorando los espacios en blanco. 
+Por ejemplo: "reconocer", "se es o no se es" o "Sé verlas al revés". Para simplificar el problema, puedes suponer que se utilizan caracteres simples, es decir, sin tildes ni diéresis.
+'''
 """
-Ejercicio 15
+def es_palindromo(cadena):
+    cadena = cadena.lower()
+    cadena_sin_espacios = ""
+
+    for caracter in cadena:
+        if caracter !=" ":
+            cadena_sin_espacios+=caracter
+
+    return cadena_sin_espacios == cadena_sin_espacios[::-1]
+
+assert(es_palindromo("Radar")==True)
+assert(es_palindromo("Rotor")==True)
+assert(es_palindromo("Ojo")==True)
+assert(es_palindromo("Oso")==True)
+assert(es_palindromo("folio")==False)
+"""
+'''
+Ejercicio 10
+'''
+"""
+def es_armstrong(numero):
+    numero_como_cadena=str(numero)
+    longitud=len(numero_como_cadena)
+
+    suma=0
+    for digito in numero_como_cadena:
+
+        suma+=int(digito)**longitud
+
+    return(suma == int(numero))
+
+assert(es_armstrong(153))
+assert(es_armstrong(371))
+"""
+'''
+Ejercicio 11
+Escribe un programa para encontrar todos los números de Armstrong en el rango de 0 a 999.
+'''
+"""
+def encontrar_Armstrong(numero):
+    texto_numero = str(numero)
+    longitud = len(texto_numero)
+    
+    suma = 0
+    for digito in texto_numero:
+        suma += int(digito) ** longitud
+        
+    return suma == numero
+
+assert (encontrar_Armstrong(153)==True)
+assert (encontrar_Armstrong(370)==True)
+assert (encontrar_Armstrong(407)==True)
+assert (encontrar_Armstrong(10)==False)
 """
 
-def son_vocales(palabra,letra,vocal):
+'''
+Ejercicio 15
+'''
+"""
+def son_vocales(palabra):
     contador = 0
     encontrada = ""
     vocales = "aeiou"
 
     palabra = palabra.lower()
 
-    for i in vocales:
-        if letra == vocal:
-            encontrada = vocal
+    for vocal in "aeiou":
+        if vocal in palabra:
+            contador+=1
 
-    if encontrada != "":
-        contador +=1
     return contador
        
 assert (son_vocales("Abaco")==2)
+assert (son_vocales("Murcielago")==5)
+assert (son_vocales("PROGRAMACION")==3)
+"""
+
+'''
+Ejercicio 16
+'''
+"""
+def son_diferentes(palabra):
+    contador = 0
+    encontrada = ""
+    abecedario = "abcdefghijklmñopqrstuvwxyz"
+
+    palabra = palabra.lower()
+    for abecedario in "abcdefghijklmñopqrstuvwxyz":
+        if abecedario in palabra:
+            contador+=1
+
+    return contador
+       
+assert (son_diferentes("Abaco")==4)
+assert (son_diferentes("Murcielago")==10)
+assert (son_diferentes("PROGRAMACION")==9)
+"""
+
+'''
+Ejercicio 17
+'''
+
+def son_ordenadas(palabra):
+    vocal = "aeiou"
+    consonantes = "bcdfghjklmnñpqrstvwxyz"
+
+    vocales = "" 
+    consonantes_min = ""
+
+    palabra = palabra.lower()
+
+    for caracter in palabra:
+        if caracter in vocal:
+            vocales+=caracter
+        elif caracter in consonantes:
+            consonantes_min+=caracter
+    resultado = consonantes_min + vocales 
+    return resultado
+
+assert(son_ordenadas("curso de programacion")=="crsdprgrmcnuoeoaaio")
+assert(son_ordenadas("Hola Mundo 123!") == "HlMndoaUo")
